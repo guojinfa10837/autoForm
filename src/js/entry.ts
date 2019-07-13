@@ -1,11 +1,14 @@
-(()=>{
-    
+import util from './util';
+(() => {
+
+    util();
+
     class Entry {
-        constructor (){
-           this.init();
+        constructor() {
+            this.init();
         }
-        init():any {
-            
+        init(): any {
+
         }
     }
     new Entry();

@@ -1,10 +1,15 @@
+
+
+import tplObj from './template';
+import common from './common';
+import template from '../assets/tpl/configTpl.art';
+//let template = {};
 class Util {
     constructor() {
         this.init();
     };
     init(){
-      
-        var obj = new Proxy({},{
+          window.souceDate = new Proxy(common,{
             get:function(target,key,receiver){
                   console.log(`getting ${key}`);
                   return Reflect.get(target,key,receiver);
@@ -14,12 +19,22 @@ class Util {
                 return Reflect.set(target,key,value,receiver);
             }
         });
-        obj.count = 1;
-        setInterval(function(){
-            //obj.count++;
-            console.log( obj.count);
-        },300);
+        
     };
+
+    tpl(tpl,opt){
+        let  htmlfn = tpl(opt);
+        return html;
+    };
+
+    render(wrap,tpl,option){
+        let _this = this;
+        let html = this.tpl(tpl,option);
+        let $html = $(html);
+        wrap.html($html);
+    };
+
+    
     
 
 };

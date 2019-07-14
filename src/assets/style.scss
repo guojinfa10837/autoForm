@@ -1,16 +1,130 @@
+*,*::after{
+    box-sizing: border-box;
+}
+.clearflx::after{
+    clear: both;
+   display:block;
+    visibility: hidden;
+    content: ".";
+}
+
 body{
-    .autoForm{
-        width:1200px;
-        min-height:300px;
-        background:#ccc;
-        margin:0 atuo;
+    width:100%;
+    min-height: 100%;
+    background:#666;
+    .autoForm{      
+        min-height:100%;       
+        width:100%;
         .header{
-            width:100%;
-            height: 60px;
-            background:#666;
-            color:#818181;
+            width:1200px;
+            margin:0 auto;
+            height: 40px;
+            background:#0088ff;
+            color:#fff;
+        }
+        .body{
+            width:1200px;
+            min-height: 400px;
+            background:#fff;
+            margin:0 auto;
+            padding:30px;
+            clear: both;
+            .left , .right{
+                float: left;
+                width:50%;
+            }
+            div.left{
+               
+                .contentLeft{
+                    width:400px;
+                    border:1px solid #818181;
+                    height: 500px;
+
+                }
+                .addListBtn{
+                    width:400px;
+                }
+            }
+            .right{
+                .tabs{
+                    width:400px;
+                    height: 36px;
+                    li{
+                      float: left;
+                      height: 36px;
+                      line-height: 36px;
+                      min-width: 50px;
+                      background:#defdef;
+                    }
+                }
+                .contentRight{
+                    width:400px;
+                    border:1px solid #818181;
+                    height: 500px;
+                }
+            }
         }
         
     }
-    
+}
+.button {
+    width:100%;
+    height: 34px;
+    line-height: 34px;
+    color:#fff;
+    background:#0088ff;
+    border-radius: 2px;
+    text-align: center;
+}
+.content{
+    .listItem{
+        width:100%;
+        height: auto;
+        border-bottom: 1px solid #ccc;
+        min-height: 40px;
+        line-height: 40px;
+        padding:5px 0px 5px 40px;
+        p{
+            display: inline-block;
+            
+        }
+        input,textarea{
+            border:1px solid #888;
+        }
+        
+    }
+    .checkbox{
+        background:url(./images/checkbox.png)no-repeat 10px center;
+
+    }
+    .checkbox.checkboxed{
+        background:url(./images/checkboxed.png)no-repeat 10px center;
+    }
+}
+.mask{
+    width:100%;
+    height: 100%;
+    position: fixed;
+    top:0;
+    left:0;
+    background:rgba(0,0,0,.5);
+
+}
+.messageTip{
+    width:400px;
+    height: auto;
+    position: fixed;
+    left:50%;
+    margin-left:-200px;
+    top:30%;
+    background:#fff;
+    .title{
+        height: 24px;
+        line-height: 24px;
+        text-align: center;
+    }
+    .messageBody{
+        width:100%;
+
+    }
 }

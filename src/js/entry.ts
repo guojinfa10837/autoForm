@@ -1,4 +1,5 @@
 import util from './util';
+import init from './init';
 (() => {
 
     util();
@@ -8,7 +9,7 @@ import util from './util';
             this.init();
         }
         init(): any {
-
+             init();
         }
     }
     new Entry();

@@ -57,21 +57,23 @@ var wrap = `
                  <h5 class="title">弹层</h5>
                  <div class="messageBody">
                       <ul class="configtab">
-                         <li>输入框</li>
+                         <li class="action">输入框</li>
                          <li>选择框</li>
                          <li>日期框</li>
                       </ul>
                       <div class="configContent">
-                         
+                           <textArea></textArea>
                       </div>
-                      <div class="tools">
+                      <div class="tools clearflx">
                           <div class="button ok">确定</div>
                           <div class="button cel">取消</div>
                       </div>
                  </div>
               </div>
            `;
-
+let config= '<div></div>';
 export default {
-    wrap
+    wrap,
+    config
+    
  } ;        

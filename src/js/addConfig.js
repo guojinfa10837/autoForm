@@ -1,8 +1,8 @@
 
 import util from './util';
-import common from './common';
 
-class Init {
+
+class Fn {
     constructor(option) {
         let _this = this;
         this.wrap = {
@@ -42,7 +42,6 @@ class Init {
         };
         this.option = Object.assign({},option);
         this.tools = util(); //继承util
-        this.tools.init();
         this.init();
     };
     init(){
@@ -56,28 +55,17 @@ class Init {
         this.wrap.liziWrap = this.wrap.jqObj.find(".contentRight");
         this.wrap.messageTip = this.wrap.jqObj.find(".messageTip");
         this.wrap.mask = this.wrap.jqObj.find(".mask");
-        //初始化页面渲染
-        //methods.setConfigTpl();
-        souceData.configQueue = common.configQueue;
-        souceData.liziQueue = common.liziQueue;
-        //事件绑定
-        this.wrap.jqObj.on("click",".checkbox",function(){
-            var id = $(this).attr("id");
-            let itemObj = methods.getItemData(id,souceData.configQueue);
-            itemObj.isSelected ? itemObj.isSelected = false: itemObj.isSelected = true;
-            souceData.configQueue =  methods.setObj(itemObj,souceData.configQueue);
-            souceData.liziQueue = methods.setLiuzique(souceData.configQueue);
-        });
-        this.wrap.jqObj.on("click",".addListBtn",function(){
-            souceData.addType = 1;
-            _this.wrap.messageTip.show();
-            _this.wrap.mask.show();
-        });
+
+        this.wrap.messageTip.on("click",".configtab li",function(){
+            let type = $(this).attr("type");
+            souceData.addType = type;
+        })
+        
 
     };
     
 };
 
-export default  function init (option){
-    return new Init(option);
+export default  function addConfig (option){
+    return new Fn(option);
 };

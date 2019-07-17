@@ -1,1 +1,44 @@
-<div>{{title}}</div>
+
+{{each configQueue as v i}}
+    {{if v.type == 1}}
+        <div class="listItem checkbox {{if v.isSelected}} selected {{/if}}" id="{{v.id}}">
+            <label>{{v.label}}</label>
+            <input type="text">
+        </div>
+    {{else if v.type == 2}}   
+        <div class="listItem checkbox {{if v.isSelected}} selected {{/if}}" id="{{v.id}}">
+            <label>{{v.label}}</label>
+            <textarea ztype="textarea"></textarea>
+        </div>
+    {{else if v.type == 3}}   
+        <div class="listItem checkbox {{if v.isSelected}} selected {{/if}}" id="{{v.id}}">
+            <label>{{v.label}}</label>
+            <p class="choseItems">
+                {{each v.list  as val inx}}
+                    <label><input type="radio">{{val}}</label>
+                {{/each}}
+            </p>
+        </div>
+    {{else if v.type == 4}}   
+        <div class="listItem checkbox {{if v.isSelected}} selected {{/if}}" id="{{v.id}}">
+            <label>{{v.label}}</label>
+            <p class="choseItems">
+                {{each v.list as val inx}}
+                    <label><input type="checkbox">{{val}}</label>
+                {{/each}}
+            </p>
+        </div>
+    {{else if v.type == 5}}
+        <div class="listItem checkbox {{if v.isSelected}} selected {{/if}}" id="{{v.id}}">
+            <label>{{v.label}}</label>
+            {{if v.isDataRegion}}
+                <p class="choseItems">
+                    <input type="text" class="data"/>至<input type="text" class="data"/>
+                </p>
+            {{else}}
+                <input type="text" class="data"/>
+            {{/if}}
+           
+        </div>
+    {{/if}}
+{{/each}}

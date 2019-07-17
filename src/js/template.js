@@ -62,7 +62,24 @@ var wrap = `
                          <li>日期框</li>
                       </ul>
                       <div class="configContent">
-                           <textArea></textArea>
+                           <ul>
+                               <li>
+                                   <label>标题</label>
+                                   <input type="text" name="label"/>
+                               </li>
+                               <li>
+                                   <label>name</label>
+                                   <input type="text" name="name"/>
+                               </li>
+                               <li>
+                                   <label>输入列表(以空格或回车区分)</label>
+                                   <textarea name="list"></textarea>
+                               </li>
+                               <li>
+                                   <label>是否是区间时间</label>
+                                   <p><label><input type="checkbox">是</label><label><input type="checkbox">否</label></p>
+                               </li>
+                           </ul>
                       </div>
                       <div class="tools clearflx">
                           <div class="button ok">确定</div>

@@ -6,6 +6,8 @@
     <li {{if addType == 5}} class="action" {{/if}} type="5">时间</li>
 </ul>
 <div class="configContent">
+    <form class="addListform">
+   
     <ul>
         <li>
             <label>标题</label>
@@ -28,4 +30,9 @@
         </li>
         {{/if}}
     </ul>
+    </form>
+</div>
+<div class="tools clearflx">
+    <div class="button ok">确定</div>
+    <div class="button cel">取消</div>
 </div>

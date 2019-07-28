@@ -73,7 +73,19 @@ class Init {
             _this.wrap.messageTip.show();
             _this.wrap.mask.show();
         });
-
+        this.wrap.jqObj.on("click",".tabs li",function(){
+            let type = $(this).attr("type");
+            console.log(type);
+            $(this).addClass("action").siblings().removeClass("action");
+            if(type == 1){
+                souceData.liziQueue = souceData.liziQueue;
+            }else{
+                console.log($(".contentRight").html())
+                 let html = $(".contentRight").html().toString();
+                 let code = html.replace(/\</g,"&lt").replace(/\>/,"&gt");
+                 $(".contentRight").html("<pre>"+code+"</pre>")
+            }
+        });
     };
     
 };

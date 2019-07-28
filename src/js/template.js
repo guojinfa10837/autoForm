@@ -43,10 +43,10 @@ var wrap = `
                   </div>
                   <div class="right">
                      <ul class="tabs">
-                        <li>实列</li>
-                        <li>代码</li>
+                        <li type="1">实列</li>
+                        <li type="2">代码</li>
                      </ul>
-                     <div class="contentRight">
+                     <div class="content contentRight">
                         <div></div>
                      </div>
                   </div>

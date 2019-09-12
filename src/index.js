@@ -4,9 +4,9 @@ import _ from 'lodash';
 import './assets/base.css';
 import './assets/style.scss';
 import tpl from './js/template';
+import entry from './js/entry';
 
 
-import './js/entry.ts';
 
 
 
@@ -18,5 +18,9 @@ root.className = 'autoForm';
 root.innerHTML = tpl.wrap;
 
 $("body").append(root);
+
+entry();
+
+
 
 

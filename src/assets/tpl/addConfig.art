@@ -1,0 +1,38 @@
+ <ul class="configtab">
+    <li {{if addType == 1}} class="action" {{/if}} type="1">输入框</li>
+    <li {{if addType == 2}} class="action" {{/if}} type="2">输入域</li>
+    <li {{if addType == 3}} class="action" {{/if}} type="3">单选框</li>
+    <li {{if addType == 4}} class="action" {{/if}} type="4">多选</li>
+    <li {{if addType == 5}} class="action" {{/if}} type="5">时间</li>
+</ul>
+<div class="configContent">
+    <form class="addListform">
+   
+    <ul>
+        <li>
+            <label>标题</label>
+            <input type="text" name="label"/>
+        </li>
+        <li>
+            <label>name</label>
+            <input type="text" name="name"/>
+        </li>
+        {{if addType == 3 || addType == 4}}
+        <li>
+            <label>输入列表(以空格或回车区分)</label>
+            <textarea name="list"></textarea>
+        </li>
+        {{/if}}
+        {{if addType == 5}}
+        <li>
+            <label>是否是区间时间</label>
+            <p><label><input type="checkbox">是</label><label><input type="checkbox">否</label></p>
+        </li>
+        {{/if}}
+    </ul>
+    </form>
+</div>
+<div class="tools clearflx">
+    <div class="button ok">确定</div>
+    <div class="button cel">取消</div>
+</div>

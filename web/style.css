@@ -1,4 +1,5 @@
 html,body{
+	background:#fff;
 	margin:0;
 	width:100%;
 	height:auto;
@@ -61,7 +62,7 @@ dl dd{
 		margin:0;
 }
 .head img{
-		width:100%; 
+	max-width:100%; 
 }
 .head span{
 		display:block;
@@ -75,9 +76,58 @@ dl dd{
 	border:1px #ccc solid;
 	border-radius:5px;
 	margin:5px 20px;
+	overflow:hidden;
+	position:relative;
 }
 .music audio{
 	width:100%;
+	position:absolute;
+	top:20px;
+	left:0;
+	opacity:0;
+}
+.music img{
+	margin:20px;
+	float:left;
+}
+
+.music h6{
+	display:inline-block;
+	font-size:18px;
+	color:#333;
+	padding:0;
+	margin:0;
+	margin-top:16px;
+}
+
+.music p{
+	padding: 0;
+	margin:0;
+}
+
+.time{
+	width:60%;
+	margin-left:90px;
+}
+
+.time p{
+	width:100%;
+	height:3px;
+	background:#e5e5e5;
+	margin:2px 0;
+	position:relative;
+}
+
+.time p span{
+	position:absolute;
+	height:3px;
+	width:50px;
+	background:#55be54;
+}
+
+.time small{
+	font-size:14px;
+	color:#e5e5e5;
 }
 
 .part_one{

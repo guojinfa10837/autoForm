@@ -27,7 +27,16 @@
             <img src="img/head.jpg">
             <span>‘喜欢是百看不厌，爱是久处生鲜’</span>
             <div class="music">
-                <audio src="img/qudali.mp3" controls></audio>
+                <audio autoplay  id="js-video" controls>
+                   <source src="img/qudali.mp3" type="video/mp4">
+                </audio>
+                <img src="img/music.png">
+                <h6>去大理</h6>
+                <p>来自郝云</p>
+                <div class="time">
+                    <p class="timeline"><span></span></p>
+                    <small class="size">00:00</small><small style="float:right;" class="timeshow">3:53</small>
+                </div>
             </div>
         </div>
         <div class="part_one">
@@ -69,7 +78,6 @@
                             <p>玉龙雪山在纳西语中被称为“欧鲁”，意为“天山”。其十三座雪峰连绵不绝，宛如一条“巨龙”腾越飞舞，故称为“玉龙”。</p>
                         </div>
                         <span>又称为“黑白雪山”。是纳西人的神山，传说纳西族保护神“三多”的化身。</span>
-                        </div>
                     </div>
                     <div class="pic">
                         <img src="img/xs.jpg">
@@ -252,4 +260,55 @@
         </div>
       </div>
     </body>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            AudioControl('js-video')
+            function AudioControl(id){
+                var audio = document.getElementById(id);
+                $(audio).on('loadedmetadata',function(){
+                    audio.pause();
+                    $(document).on('touchend','.timeline',function(e){
+                        var x = e.originalEvent.changeTouches[0].clientX-this.offsetLeft;
+                        var X = x < 0 ? 0 : x;
+                        var W = $(this).width()
+                        var place = X > W ? W : X;
+                        audio.currentTime = (place/W).toFixed(2)*audio.duration
+                        $(this).children().css({width:(place/W).toFixed(2)*100+"%"})
+                    });
+
+                    $(document).on('click','#js-play',function(e){
+                        audio.play()
+                    });
+
+                    $(document).on('click','#js-play',function(e){
+                        audio.pause()
+                    });
+                })
+
+                setInterval(function(){
+                    var currentTime = audio.currentTime;
+                    setTimeShow(currentTime);
+                },1000);
+
+                function setTimeShow(t){
+                    t = Math.floor(t);
+                    var playTime = secondToMin(audio.currentTime);
+                    $(".size").html(playTime);
+                    $(".timeshow").text(secondToMin(audio.duration))
+                    $(".timeline").children().css({width:(t/audio.duration).toFixed(4)*100+"%"})
+                }
+                function secondToMin(s){
+                    var MM = Math.floor(s / 60);
+                    var SS = s % 60;
+                    if(MM < 10)
+                       MM = "0" + MM;
+                    if(SS < 10)
+                       SS = "0" + SS;
+                   var min = MM + ":" + SS;
+                   return min.split('.')[0];
+                }
+            }
+        })
+    </script>
 </html>
